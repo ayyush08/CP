@@ -8,33 +8,34 @@ int main()
     {
         int n;
         cin >> n;
-        string word;
-        cin >> word;
-        if (n == 3)
+        string s;
+        cin >> s;
+
+        int freq[26] = {0};
+        for (int i = 2; i < n; ++i)
         {
-            if (word[0] == word[1] || word[2] == word[1])
-                cout << "Yes" << endl;
-            else
-                cout << "No" << endl;
+            freq[s[i] - 'a']++;
         }
-        int hash[26] = {0};
+
+        unordered_set<char> seen;
+        seen.insert(s[0]);
+
+        bool found = false;
+
         for (int i = 1; i < n - 1; i++)
         {
-            hash[word[i] - 'a']++;
-        }
-        bool isRepeated = false;
-        for (int i = 0; i < 26; i++)
-        {
-            if (hash[i] > 1)
+            char b = s[i];
+            if (seen.count(b) || freq[b - 'a'] > 0)
             {
-                isRepeated = true;
+                found = true;
                 break;
             }
+
+            seen.insert(b);
+            freq[s[i + 1] - 'a']--;
         }
-        if (isRepeated)
-            cout << "Yes";
-        else
-            cout << "No";
-        return 0;
+
+        cout << (found ? "Yes" : "No") << '\n';
     }
+    return 0;
 }
