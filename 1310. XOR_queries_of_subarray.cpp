@@ -30,7 +30,8 @@
 // 1 <= arr[i] <= 109
 // queries[i].length == 2
 // 0 <= lefti <= righti < arr.length
-
+#include <bits/stdc++.h>
+using namespace std;
 class Solution
 {
 public:
