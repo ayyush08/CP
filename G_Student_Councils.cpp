@@ -1,31 +1,31 @@
 #include <bits/stdc++.h>
 using namespace std;
+#define int long long
 
 bool canMake(vector<int> &students,int k,int councils){
     int cnt = 0;
     for(int student:students){
-        cnt+=min(cnt,councils);
+        cnt+=min(student,councils);
     }
 
-    return cnt >= k;
+    return cnt >= (k*councils);
 
 }
 
-int main()
+signed main()
 {
     int n, k;
-    cin >> n >> k;
+    cin >> k >> n;
     vector<int> students(n);
-    int mx = 0;
+    int tot = 0;
     for (int i = 0; i < n; i++)
     {
         cin >> students[i];
-        if (students[i] > mx)
-            mx = students[i];
+        tot+=students[i];
     }
     int ans=0;
 
-    int low = 0, high = 1e9;
+    int low = 0, high = tot/k;
 
     while (low<=high)
     {
