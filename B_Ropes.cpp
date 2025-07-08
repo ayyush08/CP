@@ -39,7 +39,7 @@ int main()
         }
     }
 
-    cout << fixed << setprecision(10) << low << endl;
+    cout << fixed << setprecision(1) << low << endl;
 
     return 0;
 }

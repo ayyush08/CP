@@ -21,7 +21,6 @@ while(left>=0 || right<n){
         turn=true;
     }
 }
-// if(n%2==0) reverse(decipher.begin(),decipher.end());
 cout << cipher[mid_index]+decipher;
 return 0;
 }

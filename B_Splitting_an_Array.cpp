@@ -2,14 +2,12 @@
 using namespace std;
 #define int long long
 
-//RETRY
 
 bool isPossible(int mid, vector<int> &arr, int k)
 {
     int cnt = 1, segSum = 0, n = arr.size();
     for (int i = 0; i < n; i++)
     {
-        if(arr[i]>mid) return false;
         if (arr[i] + segSum <= mid)
         {
             segSum += arr[i];
@@ -17,7 +15,7 @@ bool isPossible(int mid, vector<int> &arr, int k)
         else
         {
             cnt++;
-            segSum = arr[i];
+            segSum = arr[i]; //limit exceeed,window-move, count previous valid segment
         }
     }
     return cnt <= k;
@@ -32,7 +30,7 @@ signed main()
         cin >> arr[i];
 
     int l = *max_element(arr.begin(), arr.end());
-    int r = accumulate(arr.begin(), arr.end(), 0);
+    int r = accumulate(arr.begin(), arr.end(), 0LL);
     int ans = 0;
     while (l <= r)
     {
