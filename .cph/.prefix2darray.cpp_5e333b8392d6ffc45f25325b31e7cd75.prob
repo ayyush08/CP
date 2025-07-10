@@ -1,1 +1,0 @@
-{"name":"Local: prefix2darray","url":"d:\\Competitive Programming\\prefix2darray.cpp","tests":[{"id":1750840958971,"input":"2 3\n1 2 3\n4 5 6","output":"1 3 6\n5 12 21"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"d:\\Competitive Programming\\prefix2darray.cpp","group":"local","local":true}
